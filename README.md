@@ -44,6 +44,9 @@ found on a system.  Instead what you should be concerned about is finding what
 other programs may have been (mis)configured with setuid privileges and how you
 might exploit them.
 
+For this Task switch to the user named `second` which also has no special
+privileges on the system.
+
 First we would need to find what other applications have the setuid bit set, and
 to do that we would use find.
 `find / -perm +4000 -user root -type f -print` will find all files on the system
@@ -62,9 +65,32 @@ server there are two notable programs with setuid bit set and owned by root,
 3. What reasons might an administrator have for using setuid on an application?
 
 ### Task 3 - Cron
+For this Task switch to the user named `third` which also has no special
+privileges on the system.
+
 Read up on what `cron` is for linux.
 
-1. What 
+1. What is describe what `cron` does.
+2. Cron tables for each user are typically kept in `/var/spool/cron/crontab/`.
+   What users have cron tables on this system?
+3. What are the contents of the root cron table?  How often do they run?
+4. Investigate the first cron table entry.  What are the permissions on the 
+   file specified?  What is it doing?
+4. Use the first root cron job to escalate your privileges.  Describe all steps you
+   took and how it elevates your privileges.
+
+### Task 4 - Cron-tinued
+I'm so sorry...  Anyways, switch to the user named `fourth` as we have been
+doing for each task.  Now we are going to use the second root cron job to
+escalate privileges.
+
+1. The second crontable entry for root is NOT writable by everyone.  Without
+   changing this file you are able to escalate privileges.  This has to do with
+   how linux parses the `*` character in the command line.  Investigate and find
+   a way to escalate privileges *without* editing the `/cron-scripts/logRotate`
+
+### Task 5 - Poor paths
+Using the user `fifth`, you will exploit another users poor configuration.
 
 [linux privilege escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 [linux enumeration](https://www.rebootuser.com/?p=1623)
