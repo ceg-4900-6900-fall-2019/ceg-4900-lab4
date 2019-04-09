@@ -1,10 +1,27 @@
-# Privilege Escalation
+#  CEG 4900 Lab 4 - Privilege Escalation
 
 ### Introduction
+From Wikipedia:
 
+> Privilege escalation is the act of exploiting a bug, design flaw or 
+> configuration oversight in an operating system or software application
+> to gain elevated access to resources that are normally protected from an
+> application or user. The result is that an application with more privileges
+> than intended by the application developer or system administrator can 
+> perform unauthorized actions. 
 
 ### Background
+While there are many ways to gain some form of access to a system, its fairly
+rare that an exploit immediately grants you (or the person hacking in) `root` or
+other administrative access.  Typically you gain access as a low level system or
+user and have to further enumerate through a system looking for vulnerabilities
+or mis-configurations that you might use to further increase your privileges.
 
+Typically this is not a single step process, but instead relies on a number of
+vulnerabilities across a system.  For this lab we are trying to introduce
+several of the more common avenues for escalation of privileges via a contrived
+lab experience.  In the real world these avenues will still be useful but will
+not be so easily exploited.
 
 ### Resources
 * [`/code`](../blob/master/code/)
@@ -13,16 +30,19 @@
 
 
 ## Linux Privilege Escalation
+
+### A note on this lab:
 For this lab I have configured a special linux vm.  You can use your usual 
 method of signing in via the `ubuntu` user and the ssh key specified when
 you created the AWS instance.  I understand that this account gives you `sudo`
 priveleges, and feel free to use these to skip around the lab if you get stuck,
-but try not to use these privileges to "cheat" the question (or do and explain
-what you did).
+but try not to use these privileges to "cheat" the question (or, if you do, explain
+how you got stuck and what you did).
 
 To start with, the first user does not have any sort of special permissions.
 For much of this lab you will be performing some basic enumeration on the system
 in order to gain elevated privileges.
+
 
 ### Task 1 - setuid
 For task 1 please switch over to the `first` user using `sudo su first` and
@@ -134,11 +154,6 @@ Answer the following:
 4. What misconfiguration is the command looking for (if any)?
 5. How would you protect against this command or misconfiguration being used to
    elevate privilges on a system?
-
-
-## Task 2 - Windows Privilege Escalation
-
-
 
 
 ##### Special Thanks:
