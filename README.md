@@ -92,6 +92,9 @@ escalate privileges.
 ### Task 5 - Poor paths
 Using the user `fifth`, you will exploit another users poor configuration.
 
+Investigate the user `farmerjoe`.  Pay particular attention to his PATH
+variable in his `~/.bashrc`.  It appears `farmerjoe` is a lazy admin
+
 [linux privilege escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 [linux enumeration](https://www.rebootuser.com/?p=1623)
 [payatu linux privilege escalation](https://payatu.com/guide-linux-privilege-escalation/)
