@@ -9,7 +9,7 @@
 ### Resources
 * [`/code`](../blob/master/code/)
 * [AWS educate (Login link)](https://www.awseducate.com/signin/SiteLogin)
-* [AWS Build link](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=CEG-4900Lab02&templateURL=https:%2F%2Fs3.amazonaws.com%2Fwsu-cecs-cf-templates%2Fceg4900lab1.yml)
+* [AWS Build link](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=CEG-4900Lab04&templateURL=https:%2F%2Fs3.amazonaws.com%2Fwsu-cecs-cf-templates%2Fceg4900lab4.yml)
 
 
 ## Linux Privilege Escalation
