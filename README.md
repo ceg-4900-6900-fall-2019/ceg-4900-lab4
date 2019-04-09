@@ -78,6 +78,7 @@ Read up on what `cron` is for linux.
    file specified?  What is it doing?
 4. Use the first root cron job to escalate your privileges.  Describe all steps you
    took and how it elevates your privileges.
+5. How would you prevent this escalation?
 
 ### Task 4 - Cron-tinued
 I'm so sorry...  Anyways, switch to the user named `fourth` as we have been
@@ -88,22 +89,59 @@ escalate privileges.
    changing this file you are able to escalate privileges.  This has to do with
    how linux parses the `*` character in the command line.  Investigate and find
    a way to escalate privileges *without* editing the `/cron-scripts/logRotate`
+2. How would you prevent this escalation?
 
 ### Task 5 - Poor paths
-Using the user `fifth`, you will exploit another users poor configuration.
+Using the user `fifth`, you will exploit another user's poor configuration.
 
 Investigate the user `farmerjoe`.  Pay particular attention to his PATH
-variable in his `~/.bashrc`.  It appears `farmerjoe` is a lazy admin
+variable in his `~/.bashrc`.  It appears `farmerjoe` is a lazy admin and has
+added the local directory `.` to his PATH.  Lets exploit this.
 
-[linux privilege escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
-[linux enumeration](https://www.rebootuser.com/?p=1623)
-[payatu linux privilege escalation](https://payatu.com/guide-linux-privilege-escalation/)
+You have made an innocuous request to farmerjoe stating that you are having some
+issues running an `ls` in your home directory.  Farmerjoe will definitely help
+you by using `cd` to get into your directory and then running `sudo ls`.
+
+1. Where will `farmerjoe`'s environment look for `ls` first?
+2. Exploit this by creating a malicious `ls` program in this directory.  Upload
+   this `ls` along with your submission with tar.gz.  Explain how your `ls`
+   program gives you elevated privileges.
+3. How would you prevent *this* escalation?
+
+### Task 6 - More enumeration
+**WITHOUT** using `sudo` or other elevated privileges, take a look at the
+`sixth` user.
+
+1. What `groups` are they a part of?
+2. Use the data that is readable by everyone in `/home/sixth/` to gain access to
+   their account.
+3. How would you prevent this?
+
+### Task 7 - Choose your own vulnerability
+A huge part of privilege escalation in linux is enumeration.  There are a lot of
+areas to inspect and you are simply looking for one vulnerability to exploit.  
+
+Read through the following incomplete guides that cover enumeration of potential
+means of privilege escalation.
+* *[linux privilege escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+* [linux enumeration](https://www.rebootuser.com/?p=1623)
+
+Choose one command covered in the above (that we have not already gone over).
+Answer the following:
+1. What command did you choose?
+2. What does the command do?
+3. How is this useful for privilege escalation?
+4. What misconfiguration is the command looking for (if any)?
+5. How would you protect against this command or misconfiguration being used to
+   elevate privilges on a system?
+
 
 ## Task 2 - Windows Privilege Escalation
 
 
 
 
-
+##### Special Thanks:
 [riccardoancarani](https://www.riccardoancarani.it/exploting-setuid-setgid-binaries/)
+[payatu linux privilege escalation](https://payatu.com/guide-linux-privilege-escalation/)
 
