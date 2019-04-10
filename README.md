@@ -76,7 +76,7 @@ privileges on the system.
 
 First we would need to find what other applications have the setuid bit set, and
 to do that we would use find.
-`find / -perm +4000 -user root -type f -print` will find all files on the system
+`find / -perm -4000 -user root -type f -print` will find all files on the system
 that have the setuid bit AND are owned by root.  Go ahead and run it, its worth
 noting that there are a good number of these types of files by default.  On this
 server there are two notable programs with setuid bit set and owned by root,
